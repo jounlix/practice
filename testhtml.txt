@@ -1,0 +1,13 @@
+    <a style="display: inline-block;" class="button button-off" id="relay_button">RESET</a>
+    <a style="display: inline-block;" class="button button-off">TargS</a>
+    <a class="button button-off">READ</a>
+
+    <script>
+        var relay = document.getElementById("relay_button")
+        function relay_inverse() {
+            var request = new XMLHttpRequest();
+            request.open('GET', '/relay_switch', false);
+            request.send();
+        }
+        relay.addEventListener('click', relay_inverse);
+    </script>
